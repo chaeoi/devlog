@@ -1,0 +1,10 @@
+{
+  "docs": [
+    { "label": "人形", "file": "docs/人形文档.md" },
+    { "label": "轮式", "file": "docs/轮式文档.md" }
+  ],
+  "log": [
+    { "label": "人形", "file": "logs/人形迭代日志.md" },
+    { "label": "轮式", "file": "logs/轮式迭代日志.md" }
+  ]
+}

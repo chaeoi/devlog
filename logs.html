@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RobotDEV·日志</title>
+  <link rel="preconnect" href="https://registry.npmmirror.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://registry.npmmirror.com/lxgw-wenkai-screen-web/1.522.0/files/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;600;700&amp;display=swap" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="icon" href="images/icon.svg" type="image/svg+xml" />
+</head>
+<body data-page="log">
+  <div class="page">
+    <nav class="topnav">
+      <div class="nav-left">
+        <div class="brand">
+          <a class="brand__text" href="index.html">RobotDEV</a>
+        </div>
+        <div class="project-bar" id="logProjects"></div>
+      </div>
+      <div class="links">
+        <a class="nav-link" href="index.html">主页</a>
+        <a class="nav-link" href="docs.html">文档</a>
+        <a class="nav-link is-active" href="logs.html">日志</a>
+      </div>
+    </nav>
+
+    <main class="stack">
+      <div class="content-shell">
+        <div class="content-layout">
+          <aside class="log-filters" aria-label="日志筛选">
+            <p class="eyebrow">筛选</p>
+            <div class="log-controls" id="logControls">
+              <div class="log-control">
+                <span class="log-control__label">开始时间</span>
+                <label class="log-control__date">
+                  <button class="log-control__button" type="button" data-target="logStartDate">
+                    <span class="log-control__left">
+                      <span class="log-control__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="14" height="14" role="presentation">
+                          <path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1.5A2.5 2.5 0 0 1 22 6.5v12A2.5 2.5 0 0 1 19.5 21h-15A2.5 2.5 0 0 1 2 18.5v-12A2.5 2.5 0 0 1 4.5 4H6V3a1 1 0 0 1 1-1Zm12.5 7h-15v9.5c0 .55.45 1 1 1h13c.55 0 1-.45 1-1V9Zm0-2V6.5c0-.55-.45-1-1-1H4.5c-.55 0-1 .45-1 1V7h16Z" fill="currentColor"></path>
+                        </svg>
+                      </span>
+                      <span class="log-control__text">年/月/日</span>
+                    </span>
+                    <span class="log-control__suffix">之前</span>
+                  </button>
+                  <input id="logStartDate" class="log-control__input" type="hidden" />
+                </label>
+              </div>
+              <div class="log-control">
+                <span class="log-control__label">完成时间</span>
+                <label class="log-control__date">
+                  <button class="log-control__button" type="button" data-target="logCompleteDate">
+                    <span class="log-control__left">
+                      <span class="log-control__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="14" height="14" role="presentation">
+                          <path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1.5A2.5 2.5 0 0 1 22 6.5v12A2.5 2.5 0 0 1 19.5 21h-15A2.5 2.5 0 0 1 2 18.5v-12A2.5 2.5 0 0 1 4.5 4H6V3a1 1 0 0 1 1-1Zm12.5 7h-15v9.5c0 .55.45 1 1 1h13c.55 0 1-.45 1-1V9Zm0-2V6.5c0-.55-.45-1-1-1H4.5c-.55 0-1 .45-1 1V7h16Z" fill="currentColor"></path>
+                        </svg>
+                      </span>
+                      <span class="log-control__text">年/月/日</span>
+                    </span>
+                    <span class="log-control__suffix">之后</span>
+                  </button>
+                  <input id="logCompleteDate" class="log-control__input" type="hidden" />
+                </label>
+              </div>
+              <div class="log-control">
+                <span class="log-control__label">负责人</span>
+                <select id="logAssignee" class="log-control__select">
+                  <option value="all">全部</option>
+                </select>
+              </div>
+              <div class="log-control">
+                <span class="log-control__label">分组</span>
+                <select id="logGroup" class="log-control__select">
+                  <option value="all">全部</option>
+                  <option value="person">按负责人</option>
+                </select>
+              </div>
+              <div class="log-control">
+                <span class="log-control__label">状态</span>
+                <select id="logStatus" class="log-control__select">
+                  <option value="all">全部</option>
+                  <option value="done">已完成</option>
+                  <option value="todo">进行中</option>
+                </select>
+              </div>
+            </div>
+          </aside>
+          <article id="logContent" class="markdown markdown--log" aria-live="polite"></article>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
